@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "754882688157",
+    "project_id": "pettour-7996b",
+    "storage_bucket": "pettour-7996b.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:754882688157:android:f8718048f83f380445d074",
+        "android_client_info": {
+          "package_name": "com.example.pettour"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "754882688157-kei5spu6vhs62538bn64m0ad412mqvfd.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB6TvQp-nY_Iu98qW6yKq7LCkz6w592LO0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "754882688157-kei5spu6vhs62538bn64m0ad412mqvfd.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

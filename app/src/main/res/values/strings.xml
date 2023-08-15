@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Pet Tour</string>
+    <string name="edit_usuario">Email</string>
+    <string name="edit_senha">Senha</string>
+    <string name="botao_entrar">Entrar</string>
+    <string name="versao">Versão 1.0</string>
+    <string name="cadastro">Cadastre-se</string>
+</resources>

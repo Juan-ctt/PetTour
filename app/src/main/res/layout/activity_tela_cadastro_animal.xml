@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/gradient_background"
+    tools:context=".tela_cadastro_animal">
+
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:src="@drawable/fundoptsup"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:gravity="center_horizontal"
+        android:text="ANIMAL"
+        android:textSize="15sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/foto_animal"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/shape_circulo_usuario"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/imageView2"
+        app:layout_constraintTop_toBottomOf="@+id/textView3" />
+
+    <TextView
+        android:id="@+id/text_nome_animal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="30dp"
+        android:text="Nome *"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/foto_animal" />
+
+    <EditText
+        android:id="@+id/editText_nome_animal"
+        android:layout_width="360dp"
+        android:layout_height="40dp"
+        android:paddingLeft="15sp"
+        android:hint="João Silva"
+        android:background="@drawable/shape_campos_login"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/text_nome_animal" />
+
+    <TextView
+        android:id="@+id/txt_raca"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Raça *"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="10dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editText_nome_animal" />
+
+    <EditText
+        android:id="@+id/edittext_email"
+        android:layout_width="360dp"
+        android:layout_height="40dp"
+        android:paddingLeft="15sp"
+        android:hint="SRD"
+        android:background="@drawable/shape_campos_login"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txt_raca" />
+
+    <TextView
+        android:id="@+id/text_nasc_animal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="10dp"
+        android:text="Data de nascimento do animal*"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/edittext_email"></TextView>
+
+    <EditText
+        android:id="@+id/edittext_senha"
+        android:layout_width="360dp"
+        android:layout_height="40dp"
+        android:paddingLeft="15sp"
+        android:hint="2 anos"
+        android:background="@drawable/shape_campos_login"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/text_nasc_animal" />
+
+    <TextView
+        android:id="@+id/text_peso"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="30dp"
+        android:text="Peso *"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/edittext_senha"></TextView>
+
+    <EditText
+        android:id="@+id/edittext_peso"
+        android:layout_width="360dp"
+        android:layout_height="40dp"
+        android:paddingLeft="15sp"
+        android:hint="********"
+        android:background="@drawable/shape_campos_login"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/text_peso" />
+
+    <TextView
+        android:id="@+id/text_dtnasc"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Compórtamento *"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="30dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/edittext_peso"></TextView>
+
+    <EditText
+        android:id="@+id/edittext_dtnasc"
+        android:layout_width="360dp"
+        android:layout_height="40dp"
+        android:paddingLeft="15sp"
+        android:hint="Calmo"
+        android:background="@drawable/shape_campos_login"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/text_dtnasc" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Macho"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="20dp"
+        app:layout_constraintStart_toEndOf="@+id/radioButton"
+        app:layout_constraintTop_toBottomOf="@+id/edittext_dtnasc" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Fêmea"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="20dp"
+        app:layout_constraintStart_toEndOf="@+id/radioButton2"
+        app:layout_constraintTop_toBottomOf="@+id/edittext_dtnasc" />
+
+    <RadioButton
+        android:id="@+id/radioButton"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="20dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/edittext_dtnasc" />
+
+    <RadioButton
+        android:id="@+id/radioButton2"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_marginLeft="150dp"
+        android:layout_marginTop="20dp"
+        app:layout_constraintStart_toEndOf="@+id/radioButton"
+        app:layout_constraintTop_toBottomOf="@+id/edittext_dtnasc" />
+
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btn_finalizar"
+        android:layout_width="120dp"
+        android:layout_height="40dp"
+        android:background="@drawable/shape_btn_cadastro"
+        android:text="Cadastre-se"
+        android:textColor="@color/white"
+        android:textSize="10sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/radioButton2" />
+
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
