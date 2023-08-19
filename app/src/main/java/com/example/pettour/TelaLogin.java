@@ -46,7 +46,7 @@ public class TelaLogin extends AppCompatActivity {
         mAuth.signInWithEmailAndPassword(email, senha).addOnCompleteListener(task -> {
            if (task.isSuccessful()){
                finish();
-               startActivity(new Intent(this, Tela_solicitacao.class));
+               startActivity(new Intent(this, MainActivity.class));
            }else {
                Toast.makeText(this, "Usuário ou Senha inválidos!", Toast.LENGTH_SHORT).show();
            }
