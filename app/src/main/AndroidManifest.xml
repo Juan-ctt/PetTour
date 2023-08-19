@@ -35,9 +35,6 @@
             android:name=".MainActivity"
             android:exported="false" />
         <activity
-            android:name=".Tela_solicitacao"
-            android:exported="false" />
-        <activity
             android:name=".Splash_PT"
             android:exported="false" />
         <activity

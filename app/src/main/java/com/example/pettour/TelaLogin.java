@@ -27,6 +27,7 @@ public class TelaLogin extends AppCompatActivity {
         });
     }
 
+
     private void validarDados(){
         String email = binding.editTextUsuario.getText().toString().trim();
         String senha = binding.editTextSenha.getText().toString().trim();
