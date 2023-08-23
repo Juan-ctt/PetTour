@@ -4,6 +4,8 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
+import android.view.View;
+import android.widget.ProgressBar;
 import android.widget.Switch;
 import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
@@ -16,12 +18,15 @@ public class TelaLogin extends AppCompatActivity {
     private ActivityTelaLoginBinding binding;
     private FirebaseAuth mAuth;
     private SharedPreferences preferences;
+    private ProgressBar progressBar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         binding = ActivityTelaLoginBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
+
+        progressBar = findViewById(R.id.progressBar);
 
         mAuth = FirebaseAuth.getInstance();
 
@@ -51,6 +56,7 @@ public class TelaLogin extends AppCompatActivity {
                 finish();
             }
         }
+
     }
 
 
@@ -60,6 +66,7 @@ public class TelaLogin extends AppCompatActivity {
 
         if (!email.isEmpty()){
             if (!senha.isEmpty()){
+                exibirProgressBar();  // Exibir a ProgressBar enquanto realiza o login
                 loginUsuario(email, senha);
             }else {
                 Toast.makeText(this, "Informe a sua senha!", Toast.LENGTH_SHORT).show();
@@ -68,15 +75,23 @@ public class TelaLogin extends AppCompatActivity {
             Toast.makeText(this, "Informe o seu e-mail!", Toast.LENGTH_SHORT).show();
         }
     }
+    private void exibirProgressBar() {
+        progressBar.setVisibility(View.VISIBLE);  // Torna a ProgressBar visível
+    }
+
+    private void esconderProgressBar() {
+        progressBar.setVisibility(View.INVISIBLE);  // Torna a ProgressBar invisível
+    }
 
     private void loginUsuario(String email, String senha){
         mAuth.signInWithEmailAndPassword(email, senha).addOnCompleteListener(task -> {
-           if (task.isSuccessful()){
-               finish();
-               startActivity(new Intent(this, MainActivity.class));
-           }else {
-               Toast.makeText(this, "Usuário ou Senha inválidos!", Toast.LENGTH_SHORT).show();
-           }
+            esconderProgressBar();  // Esconde a ProgressBar quando o login for concluído
+            if (task.isSuccessful()){
+                finish();
+                startActivity(new Intent(this, MainActivity.class));
+            }else {
+                Toast.makeText(this, "Usuário ou Senha inválidos!", Toast.LENGTH_SHORT).show();
+            }
         });
     }
 }

@@ -24,8 +24,10 @@
         android:id="@+id/imageView"
         android:layout_width="match_parent"
         android:layout_height="450dp"
+        android:layout_marginBottom="4dp"
         android:background="@drawable/shape_login"
-        app:layout_constraintBottom_toBottomOf="parent" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        tools:layout_editor_absoluteX="0dp" />
 
     <EditText
         android:id="@+id/editTextUsuario"
@@ -87,18 +89,21 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerInParent="true"
+
         android:visibility="invisible"
-        android:layout_marginTop="10dp"
+        android:progressDrawable="@drawable/progress_bar_custom"
+        app:layout_constraintBottom_toTopOf="@+id/textView7"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/botaoEntrar" />
 
     <TextView
+        android:id="@+id/textView7"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Você é um novo usuário? "
-        android:textSize="18sp"
         android:textColor="@color/white"
+        android:textSize="18sp"
         app:layout_constraintBottom_toTopOf="@+id/textCadastro"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
@@ -121,6 +126,7 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="5dp"
         android:text="@string/versao"
+        android:textColor="@color/laranja_claro"
         style="@style/txt_tela_login"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
