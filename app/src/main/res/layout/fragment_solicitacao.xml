@@ -28,16 +28,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
-    <EditText
-        android:layout_width="350dp"
-        android:layout_height="48dp"
-        android:background="@drawable/shape_btn_branco"
-        android:layout_marginBottom="15dp"
-        android:hint="INSIRA O LOCAL"
-        android:paddingLeft="10dp"
-        app:layout_constraintBottom_toTopOf="@+id/editText2"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="@+id/imageView6" />
+
 
 
     <EditText
