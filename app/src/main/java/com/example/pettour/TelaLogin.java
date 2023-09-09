@@ -87,8 +87,11 @@ public class TelaLogin extends AppCompatActivity {
         mAuth.signInWithEmailAndPassword(email, senha).addOnCompleteListener(task -> {
             esconderProgressBar();  // Esconde a ProgressBar quando o login for concluído
             if (task.isSuccessful()){
+                String userEmail = mAuth.getCurrentUser().getEmail();
+                Intent intent = new Intent(this, MainActivity.class);
+                intent.putExtra("userEmail", userEmail); // Passa o email como um extra
+                startActivity(intent);
                 finish();
-                startActivity(new Intent(this, MainActivity.class));
             }else {
                 Toast.makeText(this, "Usuário ou Senha inválidos!", Toast.LENGTH_SHORT).show();
             }

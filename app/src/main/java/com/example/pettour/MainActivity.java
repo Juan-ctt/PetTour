@@ -9,6 +9,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.TextView;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.navigation.NavigationView;
@@ -59,6 +60,17 @@ public class MainActivity extends AppCompatActivity  implements NavigationView.O
         // Configuração do NavigationView
         NavigationView navigationView = findViewById(R.id.navigationView);
         navigationView.setNavigationItemSelectedListener(this);
+
+        // Obtenha o email do usuário passado como extra
+        String userEmail = getIntent().getStringExtra("userEmail");
+
+        // Encontre o TextView no menu lateral
+        TextView userEmailTextView = navigationView.getHeaderView(0).findViewById(R.id.userEmailTextView);
+
+        if (userEmail != null) {
+            // Defina o email do usuário no TextView
+            userEmailTextView.setText(userEmail);
+        }
 
     }
 

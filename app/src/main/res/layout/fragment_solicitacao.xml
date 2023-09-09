@@ -12,12 +12,15 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_gravity="center"
-        android:tag="map_fragment"
         android:contentDescription="Mapa interativo que exibe a localização selecionada."
+        android:tag="map_fragment"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
+
 
     <ImageView
         android:id="@+id/imageView6"
@@ -26,22 +29,43 @@
         android:background="@drawable/shape_solicitacao"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent" />
 
-
-
-
     <EditText
-        android:id="@+id/editText2"
-        android:layout_width="350dp"
+        android:id="@+id/minutosEditText"
+        android:layout_width="250dp"
         android:layout_height="48dp"
         android:layout_marginBottom="20dp"
-        android:hint="INSIRA O TEMPO DE PASSEIO"
-        android:paddingLeft="10dp"
         android:background="@drawable/shape_btn_branco"
+        android:editable="false"
+        android:hint="TEMPO DE PASSEIO"
+        android:paddingLeft="10dp"
         app:layout_constraintBottom_toTopOf="@+id/appCompatButton"
-        app:layout_constraintEnd_toEndOf="@+id/imageView6"
-        app:layout_constraintStart_toStartOf="@+id/imageView6" />
+        app:layout_constraintEnd_toStartOf="@+id/btnSubtrairMinutos"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btnSubtrairMinutos"
+        android:layout_width="40dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/shape_btn_subtrair"
+        android:text="-"
+        app:layout_constraintBottom_toBottomOf="@+id/minutosEditText"
+        app:layout_constraintEnd_toStartOf="@+id/btnAdicionarMinutos" />
+
+    <!-- Botão de Adicionar Minutos -->
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btnAdicionarMinutos"
+        android:layout_width="40dp"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="20dp"
+        android:background="@drawable/shape_btn_add"
+        android:text="+"
+        app:layout_constraintBottom_toBottomOf="@+id/btnSubtrairMinutos"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/appCompatButton"
@@ -52,7 +76,7 @@
         android:background="@drawable/shape_campos_login"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"></androidx.appcompat.widget.AppCompatButton>
+        app:layout_constraintStart_toStartOf="parent"/>
 
 
 

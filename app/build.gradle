@@ -5,6 +5,11 @@ plugins {
 }
 
 android {
+    signingConfigs {
+        debug {
+            storeFile file('C:\\Users\\juans\\Projeto\\PetTour\\app\\debug.keystore')
+        }
+    }
     namespace 'com.example.pettour'
     compileSdk 33
 

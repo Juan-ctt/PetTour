@@ -12,6 +12,8 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.EditText;
 
 import com.google.android.gms.location.FusedLocationProviderClient;
 import com.google.android.gms.location.LocationServices;
@@ -29,6 +31,10 @@ public class Fragment_solicitacao extends Fragment implements OnMapReadyCallback
     private GoogleMap googleMap;
     private FusedLocationProviderClient fusedLocationClient;
     private MapView mapView;
+    private EditText minutosEditText;
+    private Button btnAdicionarMinutos;
+    private Button btnSubtrairMinutos;
+    private int minutos = 0;
 
     @Nullable
     @Override
@@ -41,7 +47,41 @@ public class Fragment_solicitacao extends Fragment implements OnMapReadyCallback
         mapView.onCreate(savedInstanceState);
         mapView.getMapAsync(this);
 
+        // Encontre os elementos do layout
+        minutosEditText = rootView.findViewById(R.id.minutosEditText);
+        btnAdicionarMinutos = rootView.findViewById(R.id.btnAdicionarMinutos);
+        btnSubtrairMinutos = rootView.findViewById(R.id.btnSubtrairMinutos);
+
+        // Configurar os listeners de clique para os botões
+        btnAdicionarMinutos.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                minutos++;
+                atualizarTextoMinutos();
+            }
+        });
+
+        btnSubtrairMinutos.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (minutos > 0) {
+                    minutos--;
+                }
+                atualizarTextoMinutos();
+            }
+        });
+
+        // Resto do seu código
+
         return rootView;
+    }
+
+    private void atualizarTextoMinutos() {
+        if (minutos <= 1) {
+            minutosEditText.setText(minutos + " minuto");
+        } else {
+            minutosEditText.setText(minutos + " minutos");
+        }
     }
     @Override
     public void onResume() {
